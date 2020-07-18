@@ -31,7 +31,7 @@ export const SearchScreen = ({ history }) => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log(`handleFormSubmit: "${searchText}"`);
+        //console.log(`handleFormSubmit: "${searchText}"`);
         history.push(`?q=${searchText}`);
     };
 
@@ -75,7 +75,7 @@ export const SearchScreen = ({ history }) => {
 
                     {
                         (q !== '' && heroesFiltered.length === 0) && <div className="alert alert-danger">
-                            Not found a hero
+                            Not found a hero {q}
                                     </div>
                     }
 

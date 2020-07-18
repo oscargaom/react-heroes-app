@@ -6,7 +6,7 @@ import { Route, Redirect } from "react-router-dom";
 export const PublicRoute = ({isAuthenticated, component: Component, ...rest}) => {
 
     // console.log('=====================');
-    // console.log('isAuthenticated');
+    // console.log('isAuthenticated PublicRoute');
     // console.log(isAuthenticated);
     // console.log('component');
     // console.log(Component);

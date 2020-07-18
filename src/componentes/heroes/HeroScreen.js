@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Redirect } from 'react-router-dom'
 import { getHeroById } from '../../selectors/getHeroById';
 
-export const HeroeScreen = ({history}) => {
+export const HeroScreen = ({history}) => {
 
     /*  useParams es un hook que nos proporciona react-router-dom y nos
-        ayuda a obtener los parámetros de las urls. Como en este caso 
-        hacemos uso del parámetro heroId en la url: /hero/:heroId este
-        hook nos ayudará a obtenerlo de manrea sencilla.
+        ayuda a obtener los parámetros de las urls (query params). 
+        Como en este caso hacemos uso del parámetro heroId en la 
+        url: /hero/:heroId, este hook nos ayudará a obtenerlo de manera sencilla.
     */
     const params = useParams();
 
@@ -29,20 +29,23 @@ export const HeroeScreen = ({history}) => {
     // console.log(hero);
 
     const handleReturn = () => {
-
+        
+        // console.log(history);
+        
         /*  history.length contine el histórico del número de páginas sobre 
-            las que hemos navegado, de modo que si son pocas significa que 
-            copiamos la url y comenzamos a navegar desde ahí y no desde un login.
+        las que hemos navegado, de modo que si son pocas significa que 
+        copiamos la url y comenzamos a navegar desde ahí y no desde un login.
         */
-        if (history.length <= 2) {
-            history.push("/");
+       if (history.length <= 2) {
+           history.push("/");
         } else {
             history.goBack();
         }
     };
 
     if (!hero) {
-        return <Link to="/" />
+        // console.log('<Redirect to="/"');
+        return <Redirect to="/" />
     }
 
     const { superhero, publisher, alter_ego,

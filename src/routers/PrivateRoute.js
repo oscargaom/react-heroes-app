@@ -6,7 +6,7 @@ const { Route, Redirect } = require("react-router-dom");
 export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) => {
     
     // console.log('=====================');
-    // console.log('isAuthenticated');
+    // console.log('isAuthenticated PrivateRoute');
     // console.log(isAuthenticated);
     // console.log('component');
     // console.log(Component);
@@ -32,8 +32,6 @@ export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) =
             <Route path="/" location={…} computedMatch={…} 
                 component={ <Redirect to="/login"/>}
             />
-
-            
     */
 
     return <Route {...rest}
