@@ -14,6 +14,8 @@ export const PublicRoute = ({isAuthenticated, component: Component, ...rest}) =>
     // console.log(rest);
 
     return(
+        {/* Route nos provee por default la prop con la información del history 
+            y demás props como location y match gracias al react-router-dom */}
         <Route {...rest} 
             component={props => (
                 (!isAuthenticated)

@@ -23,8 +23,7 @@ export const AppRouter = () => {
                     {/* A <Switch> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
                     <Switch>
-                        {/* Route nos provee por default la prop con la información del history 
-                            y demás props como location y match gracias al react-router-dom */}
+                        
                         {/* <Route exact path="/login" component={LoginScreen} /> */}
                         <PublicRoute exact 
                                     path="/login" 
